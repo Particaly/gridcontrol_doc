@@ -1,5 +1,5 @@
 <template>
-    <a class="href" :href="path">{{value}}</a>
+    <span class="href" @click="goto">{{value}}</span>
 </template>
 
 <script>
@@ -8,12 +8,27 @@
         props: {
 			value: '',
             path: ''
-        }
+        },
+        methods:{
+            goto() {
+                if(this.path&&this.path[0] === '/'){
+                    if(this.path !== this.$route.path){
+                        this.$router.push(this.path);
+                    }
+                } else {
+                    window.location.href = this.path;
+                }
+            }
+        },
 	}
 </script>
 
-<style scoped>
-.href{
+<style scoped lang="scss">
+.href {
+    color: #3eaf7c;
     cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 </style>

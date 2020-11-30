@@ -4,6 +4,15 @@ import iView from 'view-design';
 import 'view-design/dist/styles/iview.css';
 import './styles/index.css';
 
+Vue.mixin({
+    mounted() {
+        if(this === this.$root){
+            console.log(this)
+        }
+    }
+})
+
+
 Vue.use(iView);
 // export default ({
 // 	Vue,
