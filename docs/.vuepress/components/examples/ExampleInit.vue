@@ -15,9 +15,7 @@
 		        gridcontrol.showOuterLayer = true;
 		        gridcontrol.showInnerLayer = true;
 		        gridcontrol.setInnerData(gridcontrol.grid.findGridByLevel(2))
-		        gridcontrol.hoverCallback = (grid) => {
-		            console.log(grid);
-		        }
+		        gridcontrol.triggerClick = false;
             }
         },
 	}
