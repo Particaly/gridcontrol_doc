@@ -1,5 +1,19 @@
 ## 实例属性
 
+### clickCallback 
+地图的点击事件回调
+::: tip
+使用赋值的方式来传递回调，而不是函数式传递
+```javascript
+gridcontrol.clickCallback = function(grid) {
+  // do something
+}
+```
+:::
+
+### hoverCallback
+地图的hover事件回调，调用方式同上
+
 ### showInnerLayer
 
 <b>类型： Boolean</b>

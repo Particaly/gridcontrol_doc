@@ -32,6 +32,6 @@ module.exports = {
 		}
 	},
 	markdown: {
-		lineNumber: true
+		lineNumbers: true
 	}
 }

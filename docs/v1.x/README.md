@@ -7,11 +7,11 @@
 ## 安装
 
 ```javascript
-npm install @jspatrick/grid@">=1.0.0 <2.0.0"
+npm install @jspatrick/grid@1.x
 ```
 或者
 ```javascript
-yarn add @jspatrick/grid@">=1.0.0 <2.0.0"
+yarn add @jspatrick/grid@1.x
 ```
 
 ## 使用
@@ -48,7 +48,9 @@ gridcontrol.setOption("permanentInner", true);
 // 把网格下钻的显示参数打开
 gridcontrol.showOuterLayer = true;
 gridcontrol.showInnerLayer = true;
+// 绑定地图的点击事件回调，点击地图的时候会调用该方法
 gridcontrol.clickCallback = onMapClick;
+// hove回调，同上
 gridcontrol.hoverCallback = onMapHover;
 // 加载地图
 gridcontrol.init(
@@ -62,3 +64,8 @@ gridcontrol.setInnerData(gridcontrol.grid.findGridByLevel(2));
 // 设置网格hover时的层级显示范围
 gridcontrol.layerbox.setLayerZoomRange("hover", 10, 13.3);
 ```
+
+### 初始化
+<ExampleMap >
+<ExampleInit></ExampleInit>
+</ExampleMap>

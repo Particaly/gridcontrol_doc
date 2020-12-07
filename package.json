@@ -13,6 +13,11 @@
     "vuepress": "^1.7.1"
   },
   "dependencies": {
+    "@jspatrick/grid": "1.0.67",
+    "@jspatrick/helper": "^0.1.48",
+    "@turf/turf": "^5.1.6",
+    "@xbcx/mapbox-gl": "^1.9.3",
+    "axios": "^0.21.0",
     "view-design": "^4.4.0"
   }
 }
