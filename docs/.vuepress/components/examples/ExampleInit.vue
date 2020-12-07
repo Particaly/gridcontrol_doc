@@ -1,6 +1,4 @@
-<template>
-    <div class="container"></div>
-</template>
+<template></template>
 
 <script>
 	export default {
@@ -10,12 +8,11 @@
         },
         methods: {
 	        init() {
-	        	console.log(window.gridcontrol);
-		        // 把网格下钻的显示参数打开
 		        gridcontrol.showOuterLayer = true;
 		        gridcontrol.showInnerLayer = true;
 		        gridcontrol.setInnerData(gridcontrol.grid.findGridByLevel(2))
 		        gridcontrol.triggerClick = false;
+		        gridcontrol.layerbox.setLayerZoomRange("hover", 8, 13.3);
             }
         },
 	}

@@ -68,4 +68,24 @@ gridcontrol.layerbox.setLayerZoomRange("hover", 10, 13.3);
 ### 初始化
 <ExampleMap >
 <ExampleInit></ExampleInit>
+```javascript
+// 把网格下钻的显示参数打开
+gridcontrol.showOuterLayer = true;
+gridcontrol.showInnerLayer = true;
+// 加载地图
+gridcontrol.init(
+    window.control.map, // BasicMap
+    window.control.map2,// PoiMap
+    "zhts", // flyOption的页面标志
+    true    // 是否重新绑定事件
+);
+// 设置下钻的网格数据
+gridcontrol.setInnerData(gridcontrol.grid.findGridByLevel(2));
+// 设置网格hover时的层级显示范围
+gridcontrol.layerbox.setLayerZoomRange("hover", 10, 13.3);
+
+gridcontrol.setInnerData(gridcontrol.grid.findGridByLevel(2));
+
+gridcontrol.triggerClick = false;
+```
 </ExampleMap>

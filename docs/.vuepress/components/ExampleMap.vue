@@ -3,6 +3,7 @@
         <div class="map-holder">
             <div class="map" ref="map" v-if="isInScene"></div>
         </div>
+        <div class="reset" @click="reset">重置</div>
         <slot ref="slots"></slot>
     </div>
 </template>
@@ -84,6 +85,12 @@
             destroyMap() {
             	this.watcher.dispatch('destroy');
                 map = null;
+            },
+	        reset() {
+            	this.isInScene = false;
+            	this.$nextTick(() => {
+            	    this.isInScene = true;
+            	})
             }
         },
 	}
@@ -92,6 +99,10 @@
 <style scoped lang="scss">
 .container{
     margin-top: 1rem;
+    position: relative;
+    /deep/canvas{
+        outline: none;
+    }
     /deep/.language-javascript{
         margin: 0 auto;
         border-radius: 0;
@@ -100,6 +111,16 @@
 .map-holder,.map {
     height: 330px;
     width: 100%;
-
 }
+    .reset{
+        padding: 10px 20px;
+        background: #42b983;
+        position: absolute;
+        top: 290px;
+        right: 0;
+        color: #fff;
+        letter-spacing: 3px;
+        border-top-left-radius: 7px;
+        cursor: pointer;
+    }
 </style>
