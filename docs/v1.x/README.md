@@ -66,9 +66,41 @@ gridcontrol.layerbox.setLayerZoomRange("hover", 10, 13.3);
 ```
 
 ### 初始化
-<ExampleMap >
+
+这个例子描述了gridcontrol的初始化流程，
+后续的代码中不再重复
+
+<Mapbox >
 <ExampleInit></ExampleInit>
+
 ```javascript
+// --------------------------BaseMap-----------------------------------
+// 创建网格单例
+let gridcontrol = window.gridcontrol = new GridControl();
+// 导入网格数据
+gridcontrol.useGridData(level1);
+gridcontrol.useGridData(level2, 2);
+gridcontrol.useGridData(level3, 3);
+// 初始化
+gridcontrol.init(map, map);
+// 修改围栏外遮罩的颜色
+gridcontrol.layerbox.setLayerColorByName("fullmask", 'rgba(0,0,0,0.4)');
+// 修改网格线的颜色
+gridcontrol.setColor('outer', 'middle', 'rgba(199, 199, 201, 1)');
+gridcontrol.layerbox.setLayerPaintProperty('outer-middle', 'line-width', 2);
+gridcontrol.layerbox.setLayerPaintProperty('inner-top', 'line-width', 1);
+gridcontrol.layerbox.setLayerPaintProperty('inner-middle', 'line-width', 2);
+gridcontrol.layerbox.setLayerPaintProperty('inner-bottom', 'line-width', 2);
+// --------------------------BaseMap-----------------------------------
+
+// --------------------------云图页面-----------------------------------
+// 修改网格的下钻默认视角，网格距离上下左右的像素值
+gridcontrol.defaultOption.flyOffset = {
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+};
 // 把网格下钻的显示参数打开
 gridcontrol.showOuterLayer = true;
 gridcontrol.showInnerLayer = true;
@@ -81,11 +113,50 @@ gridcontrol.init(
 );
 // 设置下钻的网格数据
 gridcontrol.setInnerData(gridcontrol.grid.findGridByLevel(2));
-// 设置网格hover时的层级显示范围
-gridcontrol.layerbox.setLayerZoomRange("hover", 10, 13.3);
-
-gridcontrol.setInnerData(gridcontrol.grid.findGridByLevel(2));
-
-gridcontrol.triggerClick = false;
+// --------------------------云图页面-----------------------------------
 ```
-</ExampleMap>
+</Mapbox>
+
+### 网格高亮
+
+<Mapbox>
+<ExampleHighlight></ExampleHighlight>
+
+```javascript
+// 取层级2的前三个网格作为grid数组
+const girdArray = gridcontrol.findGridByLevel(2).slice(0,3);
+// 创建一个高亮分组
+gridcontrol.sethighlightgrid(girdArray,'rgba(255,0,0,0.2)', 'yellow');
+// 展示一个高亮分组
+gridcontrol.showHighLight('yellow');
+// 绑定按钮事件逻辑
+document.getElementById('on').addEventListener('click', () => {
+    gridcontrol.showHighLight('yellow');
+});
+document.getElementById('off').addEventListener('click', () => {
+    gridcontrol.hideHighLight('yellow');
+});
+// 销毁一个高亮分组
+this.$once('hook:beforeDestroy', () => {
+    gridcontrol.removeHighLight('yellow');
+})
+```
+</Mapbox>
+
+
+### 修改网格线颜色
+
+<Mapbox>
+<ExampleLineColor></ExampleLineColor>
+
+```javascript
+document.getElementById('blue').addEventListener('click', () => {
+    gridcontrol.setColor('outer', 'middle', 'blue');
+    // 等同于调用下面这个
+    // gridcontrol.layerbox.setLayerColorByName('outer-middle', 'blue');
+});
+document.getElementById('green').addEventListener('click', () => {
+    gridcontrol.setColor('outer', 'middle', 'green');
+});
+```
+</Mapbox>

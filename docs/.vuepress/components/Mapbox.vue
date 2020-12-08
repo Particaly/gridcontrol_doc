@@ -13,7 +13,7 @@
     import GridControl from '@jspatrick/grid';
     import { createWatcher } from '@jspatrick/helper';
     mapboxgl.accessToken = 'pk.eyJ1Ijoid3pqOTI3MTIiLCJhIjoiY2pxNXphMmgyMjl4dzN4c3oxZTczaXFuNCJ9.7iqkAVOCgYhh4vdW-hmz4g';
-    let map;
+
 	export default {
 		name: "ExampleMap",
         data: function(){
@@ -40,9 +40,10 @@
         },
         methods: {
             bindEvents() {
-            	const windowHeight = window.innerHeight;
-            	const elHeight = this.$el.clientHeight;
             	const handler = () => {
+		            const windowHeight = window.innerHeight;
+		            const elHeight = this.$el.clientHeight;
+
 		            const isCrossTop = window.scrollY >= this.$el.offsetTop - windowHeight;
 		            const isCrossBottom = window.scrollY <= this.$el.offsetTop + elHeight;
             	    this.isInScene = isCrossTop && isCrossBottom;
@@ -53,7 +54,7 @@
 		        const level1 = (await this.axios.get(this.$withBase('/jstz_wg_one.geojson'))).data;
 		        const level2 = (await this.axios.get(this.$withBase('/jstz_wg_two.geojson'))).data;
 		        const level3 = (await this.axios.get(this.$withBase('/jstz_wg_three.geojson'))).data;
-		        map = new Map({
+		        let map = this.map = new Map({
 			        container: this.$refs.map,
 			        style: 'mapbox://styles/mapbox/dark-v9',
 			        center: this.center,
@@ -72,6 +73,12 @@
 			        gridcontrol.useGridData(level3, 3);
 			        // 初始化
 			        gridcontrol.init(map, map);
+			        gridcontrol.defaultOption.flyOffset = {
+				        top: 0,
+				        left: 0,
+				        bottom: 0,
+				        right: 0,
+			        };
 			        // 修改围栏外遮罩的颜色
 			        gridcontrol.layerbox.setLayerColorByName("fullmask", 'rgba(0,0,0,0.4)');
 			        gridcontrol.setColor('outer', 'middle', 'rgba(199, 199, 201, 1)');
@@ -79,12 +86,16 @@
 			        gridcontrol.layerbox.setLayerPaintProperty('inner-top', 'line-width', 1);
 			        gridcontrol.layerbox.setLayerPaintProperty('inner-middle', 'line-width', 2);
 			        gridcontrol.layerbox.setLayerPaintProperty('inner-bottom', 'line-width', 2);
+			        gridcontrol.showOuterLayer = true;
+			        gridcontrol.showInnerLayer = true;
+			        gridcontrol.setInnerData(gridcontrol.grid.findGridByLevel(2))
 			        this.watcher.dispatch('load');
 		        });
             },
             destroyMap() {
             	this.watcher.dispatch('destroy');
-                map = null;
+            	this.map.remove();
+                this.map = null;
             },
 	        reset() {
             	this.isInScene = false;
@@ -107,20 +118,32 @@
         margin: 0 auto;
         border-radius: 0;
     }
+    /deep/.btn-holder{
+        position: absolute;
+        display: flex;
+        top: 0;
+        .btn{
+            padding: 8px 15px;
+            margin-right: 15px;
+            background: #42b983;
+            color: white;
+            cursor: pointer;
+        }
+    }
 }
 .map-holder,.map {
     height: 330px;
     width: 100%;
 }
-    .reset{
-        padding: 10px 20px;
-        background: #42b983;
-        position: absolute;
-        top: 290px;
-        right: 0;
-        color: #fff;
-        letter-spacing: 3px;
-        border-top-left-radius: 7px;
-        cursor: pointer;
-    }
+.reset{
+    padding: 10px 20px;
+    background: #42b983;
+    position: absolute;
+    top: 286px;
+    right: 0;
+    color: #fff;
+    letter-spacing: 3px;
+    border-top-left-radius: 7px;
+    cursor: pointer;
+}
 </style>

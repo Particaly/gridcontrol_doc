@@ -8,11 +8,7 @@
         },
         methods: {
 	        init() {
-		        gridcontrol.showOuterLayer = true;
-		        gridcontrol.showInnerLayer = true;
-		        gridcontrol.setInnerData(gridcontrol.grid.findGridByLevel(2))
-		        gridcontrol.triggerClick = false;
-		        gridcontrol.layerbox.setLayerZoomRange("hover", 8, 13.3);
+		        // gridcontrol.layerbox.setLayerZoomRange("hover", 8, 13.3);
             }
         },
 	}
