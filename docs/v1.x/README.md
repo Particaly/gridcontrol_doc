@@ -122,6 +122,13 @@ gridcontrol.setInnerData(gridcontrol.grid.findGridByLevel(2));
 <ExampleHandler></ExampleHandler>
 
 ```javascript
+// 设置是否触发事件
+document.getElementById('triggerHover').addEventListener('click', () => {
+    gridcontrol.triggerHover = this.triggerHover = !this.triggerHover;
+});
+document.getElementById('triggerClick').addEventListener('click', () => {
+    gridcontrol.triggerClick = this.triggerClick = !this.triggerClick;
+});
 // 每个云图都应该使用这种方式对回调函数进行覆盖
 gridcontrol.clickCallback = (grid) => {
     alert('点击了网格' + grid.name);
