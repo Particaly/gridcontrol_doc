@@ -66,7 +66,7 @@
 			        console.log(`lngLat:[${e.lngLat.lng},${e.lngLat.lat}],\ncenter:${JSON.stringify(e.target.getCenter().toArray())},\nbearing:${e.target.getBearing()},\npitch:${e.target.getPitch()},\nzoom:${e.target.getZoom()}`);
 		        })
 		        map.once('style.load', () => {
-			        let gridcontrol = window.gridcontrol = new GridControl();
+			        let gridcontrol = this.gridcontrol = new GridControl();
 			        // 导入网格数据
 			        gridcontrol.useGridData(level1);
 			        gridcontrol.useGridData(level2, 2);

@@ -1,6 +1,7 @@
 <template></template>
 
 <script>
+    let gridcontrol;
 	export default {
 		name: "ExampleInit",
         mounted() {
@@ -8,6 +9,7 @@
         },
         methods: {
 	        init() {
+		        gridcontrol = this.$parent.gridcontrol;
 		        // gridcontrol.layerbox.setLayerZoomRange("hover", 8, 13.3);
             }
         },

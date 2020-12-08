@@ -6,6 +6,7 @@
 </template>
 
 <script>
+	let gridcontrol;
 	export default {
 		name: "ExampleHighlight",
 		mounted() {
@@ -13,6 +14,7 @@
 		},
 		methods: {
 			init() {
+				gridcontrol = this.$parent.gridcontrol;
 				const girdArray = gridcontrol.findGridByLevel(2).slice(0,3);
                 gridcontrol.sethighlightgrid(girdArray,'rgba(255,0,0,0.2)', 'yellow');
                 gridcontrol.showHighLight('yellow');

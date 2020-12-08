@@ -6,6 +6,7 @@
 </template>
 
 <script>
+	let gridcontrol;
 	export default {
 		name: "ExampleLineColor",
 		mounted() {
@@ -13,6 +14,7 @@
 		},
         methods: {
             init() {
+	            gridcontrol = this.$parent.gridcontrol;
 	            document.getElementById('blue').addEventListener('click', () => {
 		            gridcontrol.setColor('outer', 'middle', 'blue');
 		            gridcontrol.layerbox.setLayerPaintProperty('outer-middle', 'line-width', 2);
