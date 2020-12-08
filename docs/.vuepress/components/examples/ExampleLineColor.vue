@@ -17,17 +17,9 @@
 	            gridcontrol = this.$parent.gridcontrol;
 	            document.getElementById('blue').addEventListener('click', () => {
 		            gridcontrol.setColor('outer', 'middle', 'blue');
-		            gridcontrol.layerbox.setLayerPaintProperty('outer-middle', 'line-width', 2);
-		            gridcontrol.layerbox.setLayerPaintProperty('inner-top', 'line-width', 1);
-		            gridcontrol.layerbox.setLayerPaintProperty('inner-middle', 'line-width', 2);
-		            gridcontrol.layerbox.setLayerPaintProperty('inner-bottom', 'line-width', 2);
 	            });
 	            document.getElementById('green').addEventListener('click', () => {
 		            gridcontrol.setColor('outer', 'middle', 'green');
-		            gridcontrol.layerbox.setLayerPaintProperty('outer-middle', 'line-width', 2);
-		            gridcontrol.layerbox.setLayerPaintProperty('inner-top', 'line-width', 1);
-		            gridcontrol.layerbox.setLayerPaintProperty('inner-middle', 'line-width', 2);
-		            gridcontrol.layerbox.setLayerPaintProperty('inner-bottom', 'line-width', 2);
 	            });
             }
         },

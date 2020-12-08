@@ -72,13 +72,20 @@
 			        gridcontrol.useGridData(level2, 2);
 			        gridcontrol.useGridData(level3, 3);
 			        // 初始化
-			        gridcontrol.init(map, map);
+			        gridcontrol.init(map, map, 'default');
 			        gridcontrol.defaultOption.flyOffset = {
 				        top: 0,
 				        left: 0,
 				        bottom: 0,
 				        right: 0,
 			        };
+			        gridcontrol.grid.flyOption = {
+				        center: this.center,
+				        zoom: this.zoom,
+				        bearing: this.bearing,
+				        pitch: this.pitch,
+                        path: 'default'
+                    }
 			        // 修改围栏外遮罩的颜色
 			        gridcontrol.layerbox.setLayerColorByName("fullmask", 'rgba(0,0,0,0.4)');
 			        gridcontrol.setColor('outer', 'middle', 'rgba(199, 199, 201, 1)');
@@ -128,6 +135,7 @@
             background: #42b983;
             color: white;
             cursor: pointer;
+            user-select: none;
         }
     }
 }

@@ -108,12 +108,27 @@ gridcontrol.showInnerLayer = true;
 gridcontrol.init(
     window.control.map, // BasicMap
     window.control.map2,// PoiMap
-    "zhts", // flyOption的页面标志
+    "zhts", // flyOption的页面标志,只有当flyOption的path和此处的path相同时，flyOption才会生效
     true    // 是否重新绑定事件
 );
 // 设置下钻的网格数据
 gridcontrol.setInnerData(gridcontrol.grid.findGridByLevel(2));
 // --------------------------云图页面-----------------------------------
+```
+</Mapbox>
+
+### 事件回调
+<Mapbox>
+<ExampleHandler></ExampleHandler>
+
+```javascript
+// 每个云图都应该使用这种方式对回调函数进行覆盖
+gridcontrol.clickCallback = (grid) => {
+    alert('点击了网格' + grid.name);
+}
+gridcontrol.hoverCallback = (grid) => {
+    this.hoveringGrid = grid ? grid.name : '无';
+}
 ```
 </Mapbox>
 
@@ -143,7 +158,6 @@ this.$once('hook:beforeDestroy', () => {
 ```
 </Mapbox>
 
-
 ### 修改网格线颜色
 
 <Mapbox>
@@ -157,6 +171,53 @@ document.getElementById('blue').addEventListener('click', () => {
 });
 document.getElementById('green').addEventListener('click', () => {
     gridcontrol.setColor('outer', 'middle', 'green');
+});
+```
+</Mapbox>
+
+### 修改下一个层级的展示数据
+
+<Mapbox>
+<ExampleSetNextGridData></ExampleSetNextGridData>
+
+```javascript
+document.getElementById('level2').addEventListener('click', () => {
+    // 设置下一个层级的展示数据为所有层级2的网格
+    gridcontrol.setInnerData(gridcontrol.grid.findGridByLevel(2));
+});
+document.getElementById('level3').addEventListener('click', () => {
+    // 设置下一个层级的展示数据为所有层级3的网格
+    gridcontrol.setInnerData(gridcontrol.grid.findGridByLevel(3));
+});
+```
+</Mapbox>
+
+### 添加下钻后的返回按钮
+
+<Mapbox>
+<ExampleBack></ExampleBack>
+
+```javascript
+document.getElementById('back').addEventListener('click', () => {
+    // 该方法会从gridchain中取得上一个被记录得网格，并调用传入得回调
+    gridcontrol.back((grid) => {
+        console.log(grid);
+    });
+});
+```
+</Mapbox>
+
+### 手动触发下钻
+
+<Mapbox>
+<ExampleDrillDown></ExampleDrillDown>
+
+```javascript
+document.getElementById('泰兴市').addEventListener('click', () => {
+    gridcontrol.goto('泰兴市');
+});
+document.getElementById('分界镇').addEventListener('click', () => {
+    gridcontrol.goto('分界镇');
 });
 ```
 </Mapbox>
