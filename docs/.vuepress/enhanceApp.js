@@ -5,11 +5,17 @@ import axios from 'axios';
 import 'view-design/dist/styles/iview.css';
 import './styles/index.css';
 
-const files = require.context('./components/examples', false, /\.vue$/);
+const files = require.context('./components/examples', true, /\.vue$/);
 const modules = {};
 files.keys().forEach(key => {
+    const path = key;
+    if(key.includes('/')){
+        key = key.split('/');
+        key = key[key.length - 1];
+    }
     const name = key.replace(/(\.\/|\.vue)/g, '');
-    Vue.component(name, files(key).default)
+    
+    Vue.component(name, files(path).default)
 });
 console.log(modules);
 Vue.mixin({

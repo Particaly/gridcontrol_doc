@@ -26,7 +26,14 @@ module.exports = {
 				}
 			],
 			'/v2.x/': [
-
+				{
+					title: '使用方法',
+					path: '/v2.x/',
+				},
+				{
+					title: '变量和方法',
+					path: '/v2.x/Variable.md',
+				}
 			],
 			// '/': []
 		}

@@ -2,6 +2,10 @@
 
 :::tip
 这是gridcontrol的v1文档
+
+如果你需要查看v2版本的文档，
+请点击
+<Href value="这里" path="/v2.x/" /> 
 :::
 
 ## 安装

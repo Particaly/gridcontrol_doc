@@ -848,6 +848,14 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@jspatrick/grid2@npm:@jspatrick/grid@2.0.2":
+  version "2.0.2"
+  resolved "https://registry.npmjs.org/@jspatrick/grid/-/grid-2.0.2.tgz#7fb34853cef44525efc5265bc0ceca3a961efa56"
+  integrity sha512-JDED0InYCaev1ZfIURCj8DL7K9FElzO+pr5iaVk+g06VfjQjBLC4eFmu3XMS/YLU0jPzoQ/p3TEe4FZmh/nQTw==
+  dependencies:
+    "@jspatrick/helper" "^0.1.28"
+    "@turf/turf" "^5.1.6"
+
 "@jspatrick/grid@1.0.68":
   version "1.0.68"
   resolved "https://registry.npmjs.org/@jspatrick/grid/-/grid-1.0.68.tgz#1a98bd704bca1fe14aa06dd568611daa128553d3"
@@ -855,7 +863,7 @@
   dependencies:
     "@turf/turf" "^5.1.6"
 
-"@jspatrick/helper@^0.1.48":
+"@jspatrick/helper@^0.1.28", "@jspatrick/helper@^0.1.48":
   version "0.1.48"
   resolved "https://registry.npm.taobao.org/@jspatrick/helper/download/@jspatrick/helper-0.1.48.tgz#6df89d92d18cfe32ae58d5e0887adddc652e2203"
   integrity sha1-bfidktGM/jKuWNXgiHrd3GUuIgM=
