@@ -89,19 +89,19 @@ map.once('style.load', () => {
 <ExampleHandlerV2></ExampleHandlerV2>
 
 ```javascript
-// 设置是否触发事件
 document.getElementById('triggerHover').addEventListener('click', () => {
-    gridcontrol.triggerHover = this.triggerHover = !this.triggerHover;
+    this.triggerHover = !this.triggerHover;
+    gridcontrol.setOptions('triggerHover', this.triggerHover);
 });
 document.getElementById('triggerClick').addEventListener('click', () => {
-    gridcontrol.triggerClick = this.triggerClick = !this.triggerClick;
+    this.triggerClick = !this.triggerClick;
+    gridcontrol.setOptions('triggerClick', this.triggerClick);
 });
-// 每个云图都应该使用这种方式对回调函数进行覆盖
-gridcontrol.clickCallback = (grid) => {
+gridcontrol.on('click', (grid) => {
     alert('点击了网格' + grid.name);
-}
-gridcontrol.hoverCallback = (grid) => {
+});
+gridcontrol.on('hover', (grid) => {
     this.hoveringGrid = grid ? grid.name : '无';
-}
+});
 ```
 </MapboxV2>

@@ -23,7 +23,6 @@
 		methods: {
 			init() {
 				gridcontrol = this.$parent.gridcontrol;
-				console.log(gridcontrol);
 				document.getElementById('triggerHover').addEventListener('click', () => {
 					this.triggerHover = !this.triggerHover;
 					gridcontrol.setOptions('triggerHover', this.triggerHover);
