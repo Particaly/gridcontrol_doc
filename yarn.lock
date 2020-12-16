@@ -848,12 +848,12 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@jspatrick/grid2@npm:@jspatrick/grid@2.0.2":
-  version "2.0.2"
-  resolved "https://registry.npmjs.org/@jspatrick/grid/-/grid-2.0.2.tgz#7fb34853cef44525efc5265bc0ceca3a961efa56"
-  integrity sha512-JDED0InYCaev1ZfIURCj8DL7K9FElzO+pr5iaVk+g06VfjQjBLC4eFmu3XMS/YLU0jPzoQ/p3TEe4FZmh/nQTw==
+"@jspatrick/grid2@npm:@jspatrick/grid@2.0.3":
+  version "2.0.3"
+  resolved "https://registry.npmjs.org/@jspatrick/grid/-/grid-2.0.3.tgz#544d4272a6bce71e2590a2b70960cc0a022ac81e"
+  integrity sha512-I/bVr3uvOezwaf0Qo/F7QLMKDdIzxqBdRLAgDIDuV93rvxAxBqVFksxM+vTccAITYL/9sAEbRVIW6XCn3yiVKg==
   dependencies:
-    "@jspatrick/helper" "^0.1.28"
+    "@jspatrick/helper" "^0.1.50"
     "@turf/turf" "^5.1.6"
 
 "@jspatrick/grid@1.0.68":
@@ -863,10 +863,21 @@
   dependencies:
     "@turf/turf" "^5.1.6"
 
-"@jspatrick/helper@^0.1.28", "@jspatrick/helper@^0.1.48":
+"@jspatrick/helper@^0.1.48":
   version "0.1.48"
   resolved "https://registry.npm.taobao.org/@jspatrick/helper/download/@jspatrick/helper-0.1.48.tgz#6df89d92d18cfe32ae58d5e0887adddc652e2203"
   integrity sha1-bfidktGM/jKuWNXgiHrd3GUuIgM=
+  dependencies:
+    "@turf/turf" "^5.1.6"
+    animejs "^3.2.0"
+    escodegen "^2.0.0"
+    esprima "^4.0.1"
+    estraverse "^5.2.0"
+
+"@jspatrick/helper@^0.1.50":
+  version "0.1.50"
+  resolved "https://registry.npmjs.org/@jspatrick/helper/-/helper-0.1.50.tgz#b335bb9ef1c3b3818e3c8b6a6bd97bd62556bc6c"
+  integrity sha512-ycKP9G4ClDeFGpOHSz+xL6/klbavLX30pBoldty5+R2HUh3Y0er6kH8cN+XmQjELfRQwkMn+ebTGeC1LcBIp3g==
   dependencies:
     "@turf/turf" "^5.1.6"
     animejs "^3.2.0"

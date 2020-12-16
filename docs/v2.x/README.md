@@ -105,3 +105,7 @@ gridcontrol.on('hover', (grid) => {
 });
 ```
 </MapboxV2>
+
+
+### 网格高亮
+
