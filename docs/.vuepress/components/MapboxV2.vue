@@ -73,8 +73,8 @@
 						// 初始化
 						gridcontrol.useMap('default', map);
 						console.log(gridcontrol);
+						this.watcher.dispatch('load');
 					})
-					this.watcher.dispatch('load');
 				});
 			},
 			destroyMap() {
