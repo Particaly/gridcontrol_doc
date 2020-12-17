@@ -200,3 +200,31 @@ document.getElementById('white').addEventListener('click', () => {
 });
 ```
 </MapboxV2>
+
+
+### 下钻补充说明
+
+::: tip
+eventData 下还有些别的参数，详情见<Href value="这里" path="/v2.x/" /> 
+:::
+
+<MapboxV2>
+<ExampleDrillDownMoreV2></ExampleDrillDownMoreV2>
+
+```javascript
+gridcontrol.on('click', (grid, eventData) => {
+    switch (this.index) {
+        case 1: {
+            // 如果 return 为true，这次下钻将会被阻止
+            eventData.return = true;
+            break;
+        }
+        case 2: {
+            // 如果 animation 为false，地图将不会产生动画
+            eventData.animation = false;
+            break
+        }
+    }
+});
+```
+</MapboxV2>
