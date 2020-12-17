@@ -66,9 +66,9 @@
 					let gridcontrol = this.gridcontrol = new GridControl();
 					gridcontrol.options.mainId = 'Name';
 					// 导入网格数据
-					gridcontrol.useGridData('/jstz_wg_one.geojson');
-					gridcontrol.useGridData('/jstz_wg_two.geojson');
-					gridcontrol.useGridData('/jstz_wg_three.geojson');
+					gridcontrol.useGridData(this.$withBase('/jstz_wg_one.geojson'));
+					gridcontrol.useGridData(this.$withBase('/jstz_wg_two.geojson'));
+					gridcontrol.useGridData(this.$withBase('/jstz_wg_three.geojson'));
 					gridcontrol.on('load', () => {
 						// 初始化
 						gridcontrol.useMap('default', map);
