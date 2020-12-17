@@ -1,5 +1,5 @@
 <template>
-    <div class="btn-holder">
+    <div class="btn-holder" v-if="$parent.isInScene">
         <div class="btn">{{hoveringGrid}}</div>
         <div class="btn" id="triggerClick">click事件 {{triggerClick?'on':'off'}}</div>
         <div class="btn" id="triggerHover">hover事件 {{triggerHover?'on':'off'}}</div>

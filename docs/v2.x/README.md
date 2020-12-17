@@ -249,3 +249,16 @@ document.getElementById('分界镇').addEventListener('click', () => {
 });
 ```
 </MapboxV2>
+
+
+### 返回上一层级
+
+<MapboxV2>
+<ExampleBackV2></ExampleBackV2>
+
+```javascript
+document.getElementById('back').addEventListener('click', () => {
+    gridcontrol.back();
+});
+```
+</MapboxV2>

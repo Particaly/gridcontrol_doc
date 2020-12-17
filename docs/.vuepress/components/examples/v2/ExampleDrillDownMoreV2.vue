@@ -1,5 +1,5 @@
 <template>
-    <div class="btn-holder">
+    <div class="btn-holder" v-if="$parent.isInScene">
         <div class="btn" @click="switchIndex(0)" >{{index === 0?'· ':''}}默认模式</div>
         <div class="btn" @click="switchIndex(1)" >{{index === 1?'· ':''}}阻止下钻</div>
         <div class="btn" @click="switchIndex(2)" >{{index === 2?'· ':''}}无动画下钻</div>

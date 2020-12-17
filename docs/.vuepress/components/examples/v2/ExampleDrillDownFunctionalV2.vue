@@ -1,5 +1,5 @@
 <template>
-    <div class="btn-holder">
+    <div class="btn-holder" v-if="$parent.isInScene">
         <div class="btn" id="泰兴市">泰兴市</div>
         <div class="btn" id="分界镇">分界镇</div>
     </div>

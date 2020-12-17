@@ -1,5 +1,5 @@
 <template>
-    <div class="btn-holder">
+    <div class="btn-holder" v-if="$parent.isInScene">
         <div class="btn" @click="switchIndex(0)" id="normal">{{index === 0?'· ':''}}默认模式</div>
         <div class="btn" @click="switchIndex(1)" id="black">{{index === 1?'· ':''}}黑名单</div>
         <div class="btn" @click="switchIndex(2)" id="white">{{index === 2?'· ':''}}白名单</div>

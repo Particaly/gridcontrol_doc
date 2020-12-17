@@ -1,5 +1,5 @@
 <template>
-    <div class="btn-holder">
+    <div class="btn-holder" v-if="$parent.isInScene">
         <div class="btn" id="blue">蓝色</div>
         <div class="btn" id="green">绿色</div>
     </div>

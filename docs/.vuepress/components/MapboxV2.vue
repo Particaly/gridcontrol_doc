@@ -74,13 +74,27 @@
 						gridcontrol.useMap('default', map);
 						console.log(gridcontrol);
 						this.watcher.dispatch('load');
-					})
+					});
+					this.handler = (grid, eventData) => {
+						console.log('back', grid.level, eventData.recordType);
+						console.log(gridcontrol);
+						if (grid.name === '泰州市') {
+							eventData.flyOptions = {
+								center: this.center,
+								zoom: this.zoom,
+								bearing: this.bearing,
+								pitch: this.pitch,
+							}
+						}
+					}
+					gridcontrol.on('back', this.handler);
 				});
 			},
 			destroyMap() {
 				this.watcher.dispatch('destroy');
 				this.map.remove();
 				this.map = null;
+				this.gridcontrol.destroy();
 			},
 			reset() {
 				this.isInScene = false;

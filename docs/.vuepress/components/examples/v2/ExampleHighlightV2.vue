@@ -1,5 +1,5 @@
 <template>
-    <div class="btn-holder">
+    <div class="btn-holder" v-if="$parent.isInScene">
         <div class="btn" id="on">开启</div>
         <div class="btn" id="off">关闭</div>
     </div>
