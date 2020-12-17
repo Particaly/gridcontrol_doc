@@ -203,7 +203,7 @@ document.getElementById('white').addEventListener('click', () => {
 ### 下钻补充说明
 
 ::: tip
-eventData 下还有些别的参数，详情见<Href value="这里" path="/v2.x/" /> 
+eventData 下还有些别的参数，详情见<Href value="这里" path="/v2.x/Variable.html#eventdata" /> 
 :::
 
 <MapboxV2>
