@@ -228,3 +228,24 @@ gridcontrol.on('click', (grid, eventData) => {
 });
 ```
 </MapboxV2>
+
+
+### 手动触发下钻
+
+与 v1 版本相比，增加了 eventData
+
+<MapboxV2>
+<ExampleDrillDownFunctionalV2></ExampleDrillDownFunctionalV2>
+
+```javascript
+const eventData = {
+	recordType: 'record',
+}
+document.getElementById('泰兴市').addEventListener('click', () => {
+    gridcontrol.goto('泰兴市', eventData);
+});
+document.getElementById('分界镇').addEventListener('click', () => {
+    gridcontrol.goto('分界镇', eventData);
+});
+```
+</MapboxV2>
