@@ -139,7 +139,6 @@ this.$once('hook:beforeDestroy', () => {
 ```
 </MapboxV2>
 
-
 ### 修改颜色
 
 ::: tip
@@ -201,7 +200,6 @@ document.getElementById('white').addEventListener('click', () => {
 ```
 </MapboxV2>
 
-
 ### 下钻补充说明
 
 ::: tip
@@ -229,7 +227,6 @@ gridcontrol.on('click', (grid, eventData) => {
 ```
 </MapboxV2>
 
-
 ### 手动触发下钻
 
 与 v1 版本相比，增加了 eventData
@@ -249,7 +246,6 @@ document.getElementById('分界镇').addEventListener('click', () => {
 });
 ```
 </MapboxV2>
-
 
 ### 返回上一层级
 
