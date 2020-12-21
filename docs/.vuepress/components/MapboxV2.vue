@@ -71,7 +71,7 @@
 					gridcontrol.useGridData(this.$withBase('/jstz_wg_three.geojson'));
 					gridcontrol.on('load', () => {
 						// 初始化
-						gridcontrol.useMap('default', map);
+						gridcontrol.useMap(map);
 						console.log(gridcontrol);
 						this.watcher.dispatch('load');
 					});

@@ -52,7 +52,7 @@ map.once('style.load', () => {
     // 等待网格加载完成
     gridcontrol.on('load', () => {
         // 注入地图
-        gridcontrol.useMap('default', map);
+        gridcontrol.useMap(map, 'default');
     });
 });
 ```

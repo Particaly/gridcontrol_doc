@@ -144,19 +144,6 @@
 
 ]" />
 
-### hideGroupLayer
-
-将分组的 layer.layout.visibility 的值设为 'none'
-
-<MethodTemplate :width="[170,135,145,null]" :data="[
-    {
-        name: 'groupID', 
-        type: 'String',
-        deft: 'undefined',
-        desc: '对应分组的GroupID'
-    }
-]" />
-
 ### getLayer
 
 根据 ID 查找 Layer 实例，使用 includes 判断 layer.ID 是否符合条件
@@ -189,6 +176,45 @@
         href: [
             {key: 'eventData',value: '/v2.x/Variable.html#eventdata'}
         ]
+    }
+]" />
+
+### hideGroupLayer
+
+将分组的 layer.layout.visibility 的值设为 'none'
+
+<MethodTemplate :width="[170,135,145,null]" :data="[
+    {
+        name: 'groupID', 
+        type: 'String',
+        deft: 'undefined',
+        desc: '对应分组的GroupID'
+    }
+]" />
+
+### removeGroupLayer
+
+移除所有分组 groupID 相同的 layer
+
+<MethodTemplate :width="[170,135,145,null]" :data="[
+    {
+        name: 'groupID', 
+        type: 'String',
+        deft: 'undefined',
+        desc: '对应分组的GroupID'
+    }
+]" />
+
+### showGroupLayer
+
+将分组的 layer.layout.visibility 的值设为 'visible'
+
+<MethodTemplate :width="[170,135,145,null]" :data="[
+    {
+        name: 'groupID', 
+        type: 'String',
+        deft: 'undefined',
+        desc: '对应分组的GroupID'
     }
 ]" />
 
@@ -381,3 +407,144 @@
         desc: '用来存放和复用相同的source'
     }
 ]" ></ObjectTemplate>
+
+### gridcontrol.levelHelper
+
+帮助记录和管理网格层级
+
+<ObjectTemplate :width="[160,120,115,null]" :data="[
+    {
+        name: 'backbox',
+        type: 'Array',
+        deft: '[grid]',
+        desc: '存储被记录的 grid 的堆栈，新记录会被追加在末尾'
+    },
+    {
+        name: 'currentGridName',
+        type: 'String',
+        deft: '',
+        desc: '当前被 hover 的 grid 的 mainId 的值'
+    },
+    {
+        name: 'event',
+        type: 'Object',
+        deft: '{}',
+        desc: '全局事件总线'
+    },
+    {
+        name: 'gridcontrol',
+        type: 'Object',
+        deft: '{}',
+        desc: '当前的 GridControl 实例'
+    },
+    {
+        name: 'interface',
+        type: 'Array',
+        deft: '[]',
+        desc: '暴露给 gridcontrol 实例的方法'
+    },
+    {
+        name: 'level',
+        type: 'Number',
+        deft: '1',
+        desc: '当前被选中的网格的下一个层级的值'
+    },
+    {
+        name: 'map',
+        type: 'Mapbox.Map',
+        deft: '{}',
+        desc: '默认取 useMap 传入的第一个 map 或者命名为 default 的 map'
+    },
+    {
+        name: 'currentGrid',
+        type: 'Objece|null',
+        deft: '{}',
+        desc: '当前被选中的网格的 grid 实例'
+    }
+]" />
+
+### gridcontrol.mapbox
+
+用于记录被 useMap 存储的 map
+
+<ObjectTemplate :width="[130,115,150,null]" :data="[
+]" />
+
+### gridcontrol.options
+
+用于全局的参数控制
+
+<ObjectTemplate :width="[163,110,110,null]" :data="[
+    {
+        name: 'blacklist',
+        type: 'Array',
+        deft: '[]',
+        desc: '黑名单，当 drillRule 的值为 black 时，所有 grid.name 被该列表包含的 grid 都无法触发click和hover'
+    },
+    {
+        name: 'debug',
+        type: 'Boolean',
+        deft: 'false',
+        desc: '是否开启 debug 模式, 该模式下将输出更详细的 log'
+    },
+    {
+        name: 'drillRule',
+        type: 'String',
+        deft: 'none',
+        desc: '可选值为 none、white、black, 不同的下钻模式'
+    },
+    {
+        name: 'eventData',
+        type: 'Object',
+        deft: '{}',
+        desc: '触发 click 事件时传入的事件对象'
+    },
+    {
+        name: 'fitBoundsOptions',
+        type: 'Object',
+        deft: '{}',
+        desc: '全局的 mapbox 的 fitBoundsOptions 对象'
+    },
+    {
+        name: 'layerStyle',
+        type: 'Object',
+        deft: '{}',
+        desc: '全局的 mapbox 的 layer 样式对象'
+    },
+    {
+        name: 'mainId',
+        type: 'String',
+        deft: 'name',
+        desc: 'GeoJson 被加载初始化为 grid 对象时，使用的主键字段名称'
+    },
+    {
+        name: 'parentId',
+        type: 'String',
+        deft: 'pname',
+        desc: 'GeoJson 被加载初始化为 grid 对象时，指向父级的主键的字段名称'
+    },
+    {
+        name: 'permanentInner',
+        type: 'Boolean',
+        deft: 'true',
+        desc: '下钻后默认保留显示上一级的网格'
+    },
+    {
+        name: 'triggerClick',
+        type: 'Boolean',
+        deft: 'true',
+        desc: '是否触发点击事件'
+    },
+    {
+        name: 'triggerHover',
+        type: 'Boolean',
+        deft: 'true',
+        desc: '是否触发 hover 事件'
+    },
+    {
+        name: 'whitelist',
+        type: 'Array',
+        deft: '[]',
+        desc: '白名单，当 drillRule 的值为 white 时，只有 grid.name 被该列表包含的 grid 才能触发click和hover'
+    }
+]" />

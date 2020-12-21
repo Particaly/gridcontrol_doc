@@ -848,10 +848,10 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@jspatrick/grid2@npm:@jspatrick/grid@2.0.12":
-  version "2.0.12"
-  resolved "https://registry.npmjs.org/@jspatrick/grid/-/grid-2.0.12.tgz#6f64af754442b85e471865e6d4b6d8dd1724c1eb"
-  integrity sha512-tPOYWPCX0n2g7qIR9eFiJLNq+j8VdBtHKvGvy+ujU4y0wmhV6FnfxLSJm+HLxnFtGLPXw9LoprQ52qhDMnkmag==
+"@jspatrick/grid2@npm:@jspatrick/grid@2.0.13":
+  version "2.0.13"
+  resolved "https://registry.npmjs.org/@jspatrick/grid/-/grid-2.0.13.tgz#32a079e43db95dbccb98fca1b8f14febb934cc43"
+  integrity sha512-KUwIZRCtx1h0rOzcYpJsaLjwNPi91VSPb4Ab8J3/VORJB4xMvNOzYHdAK1XRn6OFs35FOln10TaZDSZ14D2xHA==
   dependencies:
     "@jspatrick/helper" "^0.1.52"
     "@turf/turf" "^5.1.6"
