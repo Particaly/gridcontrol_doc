@@ -1,5 +1,6 @@
 ## 快速入门
-
+![](https://img.shields.io/npm/v/@jspatrick/grid)
+![](https://badgen.net/npm/dw/@jspatrick/grid)
 :::tip
 这是gridcontrol的v2文档
 
