@@ -9,11 +9,9 @@
 </template>
 
 <script>
-    import mapboxgl,{Map} from '@xbcx/mapbox-gl';
     import GridControl from '@jspatrick/grid';
     import { createWatcher } from '@jspatrick/helper';
-    mapboxgl.accessToken = 'pk.eyJ1Ijoid3pqOTI3MTIiLCJhIjoiY2pxNXphMmgyMjl4dzN4c3oxZTczaXFuNCJ9.7iqkAVOCgYhh4vdW-hmz4g';
-
+	let mapboxgl, Map;
 	export default {
 		name: "ExampleMap",
         data: function(){
@@ -36,6 +34,9 @@
             }
         },
         mounted() {
+	        mapboxgl = require('@xbcx/mapbox-gl');
+	        Map = mapboxgl.Map;
+	        mapboxgl.accessToken = 'pk.eyJ1Ijoid3pqOTI3MTIiLCJhIjoiY2pxNXphMmgyMjl4dzN4c3oxZTczaXFuNCJ9.7iqkAVOCgYhh4vdW-hmz4g';
 			this.bindEvents();
         },
         methods: {
