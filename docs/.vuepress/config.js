@@ -1,5 +1,5 @@
 module.exports = {
-	base: './',
+	base: '/',
 	title: 'GridControl',
 	description: '网格管理',
 	themeConfig: {
